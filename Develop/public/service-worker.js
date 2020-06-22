@@ -5,6 +5,14 @@ const FILES_TO_CACHE = [
     '/icons/icon-512x512.png'
 ];
 
+const FILES_TO_CACHE = [
+    "/",
+    "/assets/html/index.html",
+    "/assets/css/styles.css",
+    "/dist/app.bundle.js",
+    "/dist/db.bundle.js",
+  ];
+
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
 
