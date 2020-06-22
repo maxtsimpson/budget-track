@@ -45,10 +45,12 @@ const config = {
       background_color: "#01579b",
       theme_color: "#ffffff",
       start_url: "/",
+      fingerprints: false,
       icons: [{
         src: path.resolve("./public/assets/icons/icon-512x512.png"),
         sizes: [96, 128, 192, 256, 384, 512],
-        destination: path.join("public","assets", "icons")
+        destination: path.join("icons"),
+        fingerprints: false
       }]
     })
   ]
