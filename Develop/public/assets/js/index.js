@@ -1,6 +1,8 @@
 let transactions = [];
 let myChart;
 
+import { saveRecord,checkDatabase } from "./db";
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("service-worker.js")
