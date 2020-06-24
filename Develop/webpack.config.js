@@ -7,7 +7,7 @@ const config = {
     db: "./public/assets/js/db.js",
   },
   output: {
-    path: __dirname + "/dist",
+    path: __dirname + "/public/dist",
     filename: "[name].bundle.js"
   },
   mode: "development",
