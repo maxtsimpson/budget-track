@@ -1,15 +1,3 @@
-// const path = require('path');
-
-// module.exports = {
-//   mode: 'development',
-//   entry: './assets/',
-//   output: {
-//     path: path.resolve(__dirname, 'dist'),
-//     filename: 'bundle.js'
-//   }
-// };
-
-
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 
