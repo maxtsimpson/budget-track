@@ -26,15 +26,10 @@ tr:nth-child(even) {
   color: red;
 }
 
-.wrapper {
+main {
   margin: 0 auto;
   max-width: 825px;
   text-align: center;
-}
-
-.total {
-  font-size: 150%;
-  text-decoration: underline;
 }
 
 .form {
@@ -48,4 +43,8 @@ tr:nth-child(even) {
   overflow: auto;
   width: 90%;
   margin: 0 auto;
+}
+
+main {
+  width: 100%;
 }

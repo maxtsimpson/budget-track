@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +12,41 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="manifest" href="/dist/manifest.json">
 
+  <!-- materialize  -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
   <title>Budget Tracker</title>
 </head>
-<body>
-  <div class="wrapper">
-    <div class="total">
-      <div class="total">Your total is: $<span id="total">0</span></div>
-    </div>
 
-    <div class="form">
-      <input type="text" id="t-name" placeholder="Name of transaction" />
-      <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-      <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-      <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
-      <p class="error"></p>
-    </div>
+<body>
+
+  <main class="indigo lighten-5">
+    <section class="section center-align blue-grey darken-3 white-text">
+      <h1>Welcome to budget tracker</h1>
+      <h2>Your total is: $<span id="total">0</span></h2>
+    </section>
+    <form class="container">
+      <div class="row">
+        <div class="col s3 offset-s2 input-field">
+          <label for="t-name">Name of transaction</label>
+          <input type="text" id="t-name" placeholder="Name of transaction" />
+        </div>
+        <div class="col s3 offset-s2 input-field">
+          <label for="t-amount">Transaction amount</label>
+          <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
+        </div>
+      </div>
+      <div class="row">
+        <button id="add-btn" class="col s3 offset-s2 btn green"><i class="fa fa-plus buttons"></i> Add Funds</button>
+        <button id="sub-btn" class="col s3 offset-s2 btn red"><i class="fa fa-minus"></i> Subtract Funds</button>
+        <p class="error"></p>
+      </div>
+    </form>
 
     <div class="transactions">
       <table>
@@ -34,16 +55,17 @@
           <th>Amount</th>
         </thead>
         <tbody id="tbody">
-          
+
         </tbody>
       </table>
     </div>
-    
+
     <canvas id="myChart"></canvas>
-  </div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="/dist/app.bundle.js"></script>
   <script src="/dist/db.bundle.js"></script>
 </body>
+
 </html>
