@@ -26,11 +26,9 @@ fetch("/api/transaction")
   });
 
 document.querySelector("#add-btn").onclick = function(event) {
-  event.preventDefault()
   sendTransaction(true,transactions);
 };
 
 document.querySelector("#sub-btn").onclick = function(event) {
-  event.preventDefault()
   sendTransaction(false,transactions);
 };
