@@ -1,11 +1,10 @@
 import { populateChart,populateTotal,populateTable } from "./populate";
 import { saveRecord } from "./db";
 
-export function sendTransaction(isAdding) {
-    console.log("in sendTransaction")
+export function sendTransaction(isAdding,transactions) {
     let nameEl = document.querySelector("#t-name");
     let amountEl = document.querySelector("#t-amount");
-    let errorEl = document.querySelector(".form .error");
+    let errorEl = document.querySelector("#error");
   
   
     // validate form
@@ -33,12 +32,10 @@ export function sendTransaction(isAdding) {
     transactions.unshift(transaction);
   
     // re-run logic to populate ui with new record
-    console.log("about to populate charts")
-    populateChart();
-    populateTable();
-    populateTotal();
+    populateChart(transactions);
+    populateTable(transactions);
+    populateTotal(transactions);
     // also send to server
-    console.log("posting to mongo")
     fetch("/api/transaction", {
       method: "POST",
       body: JSON.stringify(transaction),
@@ -61,7 +58,6 @@ export function sendTransaction(isAdding) {
       }
     })
     .catch(err => {
-      console.log("post to mongo failed")
       console.error(err)
       // fetch failed, so save in indexed db
       saveRecord(transaction);

@@ -1,6 +1,8 @@
 import { populateChart,populateTotal,populateTable } from "./populate";
 import { sendTransaction } from "./sendTransaction"
 
+let transactions = []
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("service-worker.js")
@@ -16,17 +18,19 @@ fetch("/api/transaction")
   })
   .then(data => {
     // save db data on global variable
-    const transactions = data;
+    transactions = data;
 
     populateTotal(transactions);
-    populateTable(transactions);
+    populateTable(transactions);   
     populateChart(transactions);
   });
 
-document.querySelector("#add-btn").onclick = function() {
-  sendTransaction(true);
+document.querySelector("#add-btn").onclick = function(event) {
+  event.preventDefault()
+  sendTransaction(true,transactions);
 };
 
-document.querySelector("#sub-btn").onclick = function() {
-  sendTransaction(false);
+document.querySelector("#sub-btn").onclick = function(event) {
+  event.preventDefault()
+  sendTransaction(false,transactions);
 };
