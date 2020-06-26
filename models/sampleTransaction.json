@@ -1,0 +1,5 @@
+{
+    "name": "blah",
+    "value": 300,
+    "date": "{{current_timestamp}}"
+}
